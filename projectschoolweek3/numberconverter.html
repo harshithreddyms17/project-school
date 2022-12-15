@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .number
+            {
+                display: block;
+                margin-bottom: 50px;
+            }
+            .numberSubmit
+            {
+                display: block;
+                margin-bottom: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="text" class="number">
+        <input type="submit" class="numberSubmit" value="convert">
+        <input type="text" class="word">
+        <script>
+            function intoWords()
+            {
+                const num = document.querySelector('.number');
+                var numtobeconv=num.value;
+                const word = document.querySelector('.word');
+                if(Number(numtobeconv)<0 || Number(numtobeconv)>999)
+                {
+                    word.value='out of range';
+                }
+                else if(Number(numtobeconv)!==0)
+                {
+                    var arr=['one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixty','seventeen','eighteen','ninteen']
+                    var arr1=['twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety'];
+                    var answer='';
+                    if(Number(numtobeconv)>99)
+                    {
+                        answer=arr[Number(numtobeconv[0])-1]+' hundred ';
+                        numtobeconv=(Number(numtobeconv)-Number(numtobeconv[0])*100).toString();
+                    }
+                    if(Number(numtobeconv)>19)
+                    {
+                        answer+=arr1[Number(numtobeconv[0])-2]+' ';
+                        numtobeconv=(Number(numtobeconv)-Number(numtobeconv[0])*10).toString();
+                    }
+                    if(Number(numtobeconv)<=19 && Number(numtobeconv)>0)
+                    {
+                        answer+=arr[Number(numtobeconv)-1];
+                    }
+                    word.value=answer;
+                }
+                else
+                {
+                    word.value='zero';
+                }                
+            }
+            const converter = document.querySelector('.numberSubmit');
+            converter.addEventListener('click',intoWords);
+        </script>
+    </body>
+</html>

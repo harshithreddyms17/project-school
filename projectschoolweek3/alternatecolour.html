@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+
+        </title>
+    </head>
+    <body>
+        <div class="para">
+            <p>Harshith</p>
+            <p>Harshith</p>
+            <p>Harshith</p>
+            <p>Harshith</p>
+            <p>Harshith</p>
+            <p>Harshith</p>
+        </div>
+        <input type="submit" class="changebutton" value="change">
+        <script>
+            document.title='alternate colour';
+            let count=0;
+            function colorchange()
+            {
+                const allparas=document.querySelectorAll(".para p");
+                for(const allpara of allparas)
+                {
+                    count+=1;
+                    if(count%2===1)
+                    {
+                        allpara.style.color='red';
+                    }  
+                }
+            }
+            const changebutton = document.querySelector('.changebutton');
+            changebutton.addEventListener('click',colorchange);
+        </script>
+    </body>
+</html>

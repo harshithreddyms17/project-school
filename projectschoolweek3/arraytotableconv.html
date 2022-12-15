@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 3</title>
+    </head>
+    <body>
+        
+    </body>
+    <script>
+       function createtable(tabledata)
+       {
+            var table = document.createElement('table');
+            tabledata.forEach(function(rowdata)
+            {
+                var row = document.createElement('tr');
+                rowdata.forEach(function(celldata)
+                {
+                    var cell= document.createElement('td');
+                    cell.append(document.createTextNode(celldata));
+                    cell.style.border='solid';
+                    cell.style.borderColor='silver';
+                    cell.style.fontWeight='bold';
+                    cell.style.padding='5px 5px 5px 5px'
+                    cell.style.textAlign='center'
+                    row.append(cell);
+                });
+                table.append(row);
+            });
+            document.body.appendChild(table);
+            table.style.borderCollapse='collapse';
+            table.style.margin='auto'
+       }
+       let tableArr = [
+["Group Id", "Project Name"],
+["G6", "Develop a Software for Categorization of cases"],
+["G8", "Develop a Software for Categorization of cases"],
+["G41", "Crowd Sourcing model for preparing large questionbanks"],
+["G47", "Crowd Sourcing model for preparing large questionbanks"],
+["G30", "Online project platform for sharing"],
+["G26", "Online project platform for sharing"],
+["G33", "Centralized grievance system portal"],
+["G38", "Centralized grievance system portal"]
+]
+createtable(tableArr)
+    </script>
+</html>

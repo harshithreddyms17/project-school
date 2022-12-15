@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+
+        </title>
+    </head>
+    <body>
+        <p class="demo"></p>
+        <script>
+            const companies = 
+            [
+                { name: "Company One", category: "Finance", start: 1981, end: 2004 },
+                { name: "Company Two", category: "Retail", start: 1992, end: 2008 },
+                { name: "Company Three", category: "Auto", start: 1999, end: 2007 },
+                { name: "Company Four", category: "Retail", start: 1989, end: 2010 },
+                { name: "Company Five", category: "Technology", start: 2009, end: 2014 },
+                { name: "Company Six", category: "Finance", start: 1987, end: 2010 },
+                { name: "Company Seven", category: "Auto", start: 1986, end: 1996 },
+                { name: "Company Eight", category: "Technology", start: 2011, end: 2016 },
+                { name: "Company Nine", category: "Retail", start: 1981, end: 1989 }
+            ];
+            companies.forEach(function(comp1){
+                document.write(comp1.name+"<br>")
+            });
+            document.write("----------------------------<br>")
+            const result = companies.filter(company => company.start>1987)
+            result.forEach(function(comp2){
+                document.write(comp2.name+"<br>")
+            });
+            document.write("----------------------------<br>")
+            const person = {
+                name: "Costas",
+                address: 
+                {
+                    street: "Lalaland 12"
+                }
+            }
+            const {address:{street='harshith'}} = person
+            document.write(street)
+        </script>
+    </body>
+</html>
